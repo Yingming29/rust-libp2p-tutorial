@@ -3,8 +3,19 @@ name = "rust-libp2p-tutorial"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "main_async_std"
+path = "src/main_async_std.rs"
+
+
 [dependencies]
-libp2p = { version = "0.52", features = ["tcp", "tls", "dns", "async-std", "noise", "yamux", "websocket", "ping", "macros"] }
+# libp2p = { version = "0.52", features = ["tcp", "tls", "dns", "async-std", "noise", "yamux", "websocket", "ping", "macros"] }
+libp2p = { version = "0.54.1", features = ["full"] }
 futures = "0.3.21"
 async-std = { version = "1.12.0", features = ["attributes"] }
+tokio = { version = "1.41.1", features = ["full"]}
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
